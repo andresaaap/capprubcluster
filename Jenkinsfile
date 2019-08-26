@@ -6,7 +6,7 @@ pipeline {
 				withAWS(region:'us-east-1', credentials:'aws-static') {
 					sh '''
 						eksctl create cluster \
-						--name prodandy \
+						--name prodalvi \
 						--version 1.13 \
 						--nodegroup-name standard-workers \
 						--node-type t2.small \
@@ -14,7 +14,6 @@ pipeline {
 						--nodes-min 1 \
 						--nodes-max 4 \
 						--node-ami auto
-						--region=us-east-1
 					'''
 				}
 			}
